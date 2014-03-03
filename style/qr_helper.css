@@ -1,0 +1,27 @@
+*{ margin:0; padding:0;}
+body{ background:#FFF; font:14px/1.5 '\5FAE\8F6F\96C5\9ED1',Arial,HELVETICA;}
+
+/* popup */
+.popup{ background:url(../images/loading.gif) no-repeat 50% 50%; padding:5px;}
+.popup img{ display:block; visibility:hidden;}
+.popup img.active{ visibility:visible;}
+.popup .icon{ background:#FFF url(../images/place.png) no-repeat; background-size:contain; border-radius:5px; margin:-12px 0 0 -12px; height:24px; width:24px; position:absolute; left:50%; top:50%; opacity:.96; pointer-events:none;}
+
+/* options_page */
+.options_page{ background:#F0F0F0;}
+.options_page h2{ font-size:30px; font-weight:normal;}
+.options_page h3{ font-size:16px; font-weight:normal;}
+.options_page a{ color:#333;}
+.options_page a:hover{ color:#F3BC00;}
+.options_page header{ margin-bottom:10px; padding:24px 0; text-align:center;}
+.options_page .content{ background:#FFF; border:1px solid #DDD; border-radius:5px; margin:0 auto; padding:30px 45px; width:680px;}
+.options_page .content h2{ margin-bottom:15px;}
+.options_page .content h3{ color:#666;}
+.options_page .option{ border-top:1px solid #DDD; padding:15px 0;}
+.options_page .option::after{ clear:both; display:block; content:''; height:0;}
+.options_page .option .main{ float:left;}
+.options_page .option ul{ list-style:none;}
+.options_page .option li{ padding-bottom:5px; vertical-align:top;}
+.options_page .option input[type=checkbox], .options_page .option input[type=radio]{ margin:-2px 5px 0 0; height:13px; width:13px; vertical-align:middle;}
+.options_page .option h3{ float:left; width:30%;}
+.options_page footer{ color:#999; font-size:12px; padding:20px 0; text-align:center;}
