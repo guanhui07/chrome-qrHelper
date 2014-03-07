@@ -46,6 +46,11 @@
 				view.QRHelper.fire('config');
 			}
 		},
+		
+		//getLang
+		getLang: function(name){
+			return chrome.i18n.getMessage(name);
+		},
 
 		//Events
 		on: function(type, callback){

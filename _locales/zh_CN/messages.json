@@ -1,0 +1,26 @@
+{
+	"name": {
+		"message": "二维码小助手"
+	},
+	"description": {
+		"message": "二维码小助手，根据当前页面URL生成二维码；解析页面上某个二维码"
+	},
+	"generate_qr_error": {
+		"message": "二维码创建失败，请检查网络连接或与管理员联系！\nhttp://laoshu133.com"
+	},
+	"read_qr_title": {
+		"message": "读取二维码"
+	},
+	"read_qr_txt_tips": {
+		"message": "二维码解析成功且已复制，请粘贴使用："
+	},
+	"read_qr_error_0": {
+		"message": "图片加载失败！"
+	},
+	"read_qr_error_1": {
+		"message": "网络或者服务器错误，请重试！"
+	},
+	"read_qr_error_2": {
+		"message": "解码失败！"
+	}
+}

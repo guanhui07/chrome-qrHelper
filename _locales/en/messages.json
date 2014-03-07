@@ -1,0 +1,26 @@
+{
+	"name": {
+		"message": "QR Helper"
+	},
+	"description": {
+		"message": "Qr code helper, generated qr code by the current page URL; Parsing a qr code on a page"
+	},
+	"generate_qr_error": {
+		"message": "Qr code creation failed, please check the network connection or contact the administrator!"
+	},
+	"read_qr_title": {
+		"message": "Read the qr code"
+	},
+	"read_qr_txt_tips": {
+		"message": "Qr code parsing and replicated success, please paste the use:"
+	},
+	"read_qr_error_0": {
+		"message": "Image loading failure!"
+	},
+	"read_qr_error_1": {
+		"message": "The network or server error, please try again!"
+	},
+	"read_qr_error_2": {
+		"message": "Decoding failure!"
+	}
+}

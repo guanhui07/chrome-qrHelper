@@ -1,7 +1,7 @@
 /**
 * 读取页面URL 创建二维码
 * @author admin@laoshu133.com
-* @date   2014.02.26
+* @date   2014.03.07
 */
  
 Zepto(function($){
@@ -17,11 +17,11 @@ Zepto(function($){
 		loadQrImg(tab.url, function(url){
 			qrImg.attr('src', url).addClass('active');
 
-			if(tab.favIconUrl){
-				qrIcon.css('backgroundImage', 'url('+ tab.favIconUrl +')');
+			if(tab.favIconUrl && tab.favIconUrl.indexOf('chrome://theme') !== 0){
+				qrIcon.css('backgroundImage', 'url('+ tab.favIconUrl +')').show();
 			}
 		}, function(){
-			alert('二维码创建失败，请检查网络连接或与管理员联系。');
+			alert(chrome.i18n.getMessage('generate_qr_error'));
 		});
 	});
 

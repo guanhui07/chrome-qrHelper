@@ -22,7 +22,7 @@
 		chrome.contextMenus.create({
 			type: 'normal',
 			contexts: ['image'],
-			title: '读取二维码',
+			title: QRHelper.getLang('read_qr_title'),
 			onclick: function(info, tab){
 				showLoading();
 				qrcode.decode(info.srcUrl, function(text, data){
@@ -34,7 +34,7 @@
 					}
 					else{
 						setClipboard(text);
-						alert('二维码解析成功且已复制，请粘贴使用：\n\n' + text + '');
+						alert(QRHelper.getLang('read_qr_txt_tips') +'\n\n' + text + '');
 					}
 				}, function(code, msg){
 					hideLoading();
@@ -152,9 +152,9 @@
 		},
 		throwError: function(code, callback){
 			var errMsgs = [
-				'图片加载失败！',
-				'网络或者服务器错误，请重试！',
-				'解码失败！'
+				QRHelper.getLang('read_qr_error_0'),
+				QRHelper.getLang('read_qr_error_1'),
+				QRHelper.getLang('read_qr_error_2')
 			];
 
 			callback && callback(code, errMsgs[code - 1]);
