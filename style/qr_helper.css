@@ -3,9 +3,12 @@ body{ background:#FFF; font:14px/1.5 '\5FAE\8F6F\96C5\9ED1',Arial,HELVETICA;}
 
 /* popup */
 .popup{ background-repeat:no-repeat; background-position:50% 50%; padding:5px;}
-.popup img{ display:block; visibility:hidden;}
-.popup img.active{ visibility:visible;}
-.popup .icon{ display:none; background:#FFF url(../images/place.png) no-repeat; background-size:contain; border-radius:5px; margin:-12px 0 0 -12px; height:24px; width:24px; position:absolute; left:50%; top:50%; opacity:.96; pointer-events:none;}
+.popup .qr_panel,
+.popup .icon{ visibility: hidden; opacity: 0; transition: all linear .2s .24s;}
+.popup .qr_panel{ background: #FFF; height: 200px; width: 200px;}
+.popup .qr_panel.active,
+.popup .qr_panel.active + .icon{ visibility: visible; opacity: 1;}
+.popup .icon{ display: none; background:#FFF url(../images/place.png) no-repeat; background-size:contain; border-radius:5px; margin:-12px 0 0 -12px; height:24px; width:24px; position:absolute; left:50%; top:50%; opacity:.96; pointer-events:none;}
 
 /* options_page */
 .options_page{ background:#F0F0F0;}

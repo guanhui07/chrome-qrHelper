@@ -43,7 +43,7 @@
 			}
 		});
 	}
-	
+
 	function removeContextMenu(){
 		chrome.contextMenus.removeAll();
 	}
@@ -60,7 +60,7 @@
 
 		document.execCommand('copy', false, null);
 	}
-	
+
 	function showLoading(){
 		var count = 4, currInx = showLoading.currInx || 0;
 		var txt = new Array(currInx+1).join('.') + new Array(count-currInx+1).join(' ');
@@ -93,7 +93,7 @@
 			});
 		},
 		decodeByFile: function(blob, success, error){
-			var 
+			var
 			self = this,
 			formData = new FormData(),
 			xhr = new XMLHttpRequest();
@@ -140,12 +140,12 @@
 			var img = new Image();
 			img.onload = function(){
 				img.onload = img.onerror = null;
-				
+
 				success && success(img.url, img);
 			};
 			img.onerror = function(){
 				img.onload = img.onerror = null;
-				
+
 				error && error();
 			}
 			img.src = url;
