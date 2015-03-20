@@ -1,8 +1,11 @@
 /**
 * 根据图片解析 二维码
 * @author admin@laoshu133.com
-* @date   2014.02.26
+* @date   2015.03.20
+*
+* @dep https://github.com/LazarSoft/jsqrcode
 */
+
 ;(function(){
 	QRHelper.on('config', function(){
 		updateConfig();
@@ -26,6 +29,7 @@
 			onclick: function(info, tab){
 				showLoading();
 				qrcode.decode(info.srcUrl, function(text, data){
+					setClipboard(text);
 					hideLoading();
 
 					var rurl = /^(?:https?|ftp|file):\/\/\w+/i;
@@ -33,7 +37,6 @@
 						chrome.tabs.create({ url:text });
 					}
 					else{
-						setClipboard(text);
 						alert(QRHelper.getLang('read_qr_txt_tips') +'\n\n' + text + '');
 					}
 				}, function(code, msg){
@@ -79,10 +82,43 @@
 
 
 /**
-* qrcode
+* qrcode, online
+*
+* @deprecated http://tool.oschina.net/action/qrcode/decode
+*
 */
 ;(function(){
-	var qrcode = window.qrcode = {
+	var qrcode = window.qrcode;
+
+	var _decode = qrcode.decode;
+	qrcode.decode = function(url, onsuccess, onerror) {
+		qrcode.callback = function(msg) {
+			var errMsg = '';
+			var hasErr = false;
+
+			if(msg && msg.indexOf('error decoding') > -1) {
+				hasErr = true;
+				errMsg = msg;
+			}
+
+			if(hasErr) {
+				onerror && onerror(3, QRHelper.getLang('read_qr_error_2'));
+				return;
+			}
+
+			if(onsuccess) {
+				onsuccess(msg);
+			}
+		};
+
+		_decode.call(qrcode, url);
+	};
+
+	return;
+
+	// deprecated
+	// http://tool.oschina.net/action/qrcode/decode
+	var qrcode = {
 		decodeUrl: 'http://tool.oschina.net/action/qrcode/decode',
 		decode: function(url, success, error){
 			var self = this;
@@ -160,4 +196,6 @@
 			callback && callback(code, errMsgs[code - 1]);
 		}
 	};
+
+	window.qrcode = qrcode;
 })();
