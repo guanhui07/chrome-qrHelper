@@ -14,7 +14,7 @@
 	},
 	"permissions": [ "tabs", "contextMenus", "*://*/*" ],
 	"background": {
-		"scripts": [ "js/qrcode.decode.min.js", "js/config.js", "js/background.js"]
+		"scripts": [ "js/jsqrcode.js", "js/config.js", "js/background.js"]
 	},
 	"options_page": "options.html"
 }
