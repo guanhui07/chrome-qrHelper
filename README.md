@@ -1,6 +1,6 @@
 ﻿# Chrome插件，二维码小助手
 
-![Homepage](http://www.laoshu133.com/post/qr_helper.html)
+[Homepage](http://www.laoshu133.com/post/qr_helper.html)
 
 ##功能简介
 
